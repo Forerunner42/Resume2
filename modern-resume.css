@@ -1,0 +1,115 @@
+*,
+*::before,
+*::after{
+    box-sizing: border-box;
+}
+
+body{
+    margin:0;
+}
+
+.container{
+    width:70%;
+    margin:0 auto;
+}
+
+.grid{
+    display:grid;
+    grid-template-columns:1fr 3fr;
+    grid-template-areas:
+    "sb mc";
+}
+
+/* header CSS */
+.header{
+    display:flex;
+    justify-content: space-between;
+    background-color:rgb(49,62,79);
+    align-items:center;
+    text-align:center;
+    padding:30px;
+    color:white;
+}
+
+img{
+    width:150px;
+    height:150px;
+    border-radius:50%;
+}
+
+/* Sidebar CSS */
+.Sidebar{
+    grid-area:"sb";
+    background-color:rgb(75, 96, 122);
+    padding:30px;
+}
+
+.button{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:flex-start;
+}
+
+button{
+    background-color:blue;
+    color:white;
+    margin:3px;
+}
+
+.Sidebar h2{
+    color:white;
+    margin-left:15px;
+    margin-bottom:5px;
+}
+
+.Sidebar hr{
+    margin-top:5px;
+}
+
+.Sidebar li{
+    list-style-type:none;
+    color:white;
+}
+
+/* Main Content CSS */
+.Main-Content{
+    grid-area:"mc";
+    padding:30px;
+}
+
+.Main-Content h4, .Main-Content h5, .Main-Content p{
+    margin:4px;
+}
+
+.Main-Content li{
+    list-style-type: none;
+    margin-left:-35px;
+}
+
+.Main-Content h2{
+    margin-left:15px;
+    margin-bottom:5px;
+}
+
+.Main-Content hr{
+    margin-top:5px;
+    border-color:blue;
+}
+
+/* Media Query */
+@media (max-width:769px){
+    .container{
+        width:100vw;
+    }
+
+    .grid{
+        grid-template-columns:1fr;
+        grid-template-areas:
+        "sb"
+        "mc";
+    }
+
+    .header{
+        flex-direction:column;
+    }
+}
